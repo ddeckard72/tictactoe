@@ -1,13 +1,8 @@
 
-require "./player"
-require "./computer"
-require "./board"
-require "./scoreboard"
-require "./game"
 
 require "pry"
 
-class Player.rb
+class Player
 	def initialize(name = "The Nameless One")
 		@name = name
 	end 

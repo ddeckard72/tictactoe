@@ -7,11 +7,11 @@ require "./scoreboard"
 require "pry"
 
 class Game
-	def initialize (player1, player2)
+	def initialize(player1, player2)
 		@player1 = player1
 		@player2 = player2
 		@board = Board.new
-		@scoreboard = Scoreboard.new
+		@scoreboard = Scoreboard.new(player1, player2)
 		@current_player = player2
 
 	end

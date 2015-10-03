@@ -6,9 +6,9 @@ require "./game"
 
 require "pry"
 
-class ScoreBoard(player1, player2)
+class ScoreBoard
 	#game history
-	def initialize
+	def initialize(player1, player2)
 		@round = 1
 		@player1 = player1
 		@player2 = player2
@@ -18,7 +18,7 @@ class ScoreBoard(player1, player2)
 	end
 
 	def winner(player)
-		if player == player1
+		if player == @player1
 			@player1_wins += 1
 		else
 			@player2_wins += 1
@@ -27,9 +27,13 @@ class ScoreBoard(player1, player2)
 		@winner = player 
 	end 
 
+	def winner?
+		@winner
+	end
+
 	def show
 		puts "#{@winner} won this round."
-		if @rount > 1
+		if @round > 1
 			puts "#{@round} round's played."
 		else
 			puts "1 round played"

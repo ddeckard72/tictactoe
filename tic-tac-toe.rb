@@ -10,7 +10,7 @@ require "pry"
 
 
 #get play mode
-
+	#put stuff here to decide player vs. player or player vs. computer
 #get players
 puts "Enter player 1 name:"
 name = gets.chomp

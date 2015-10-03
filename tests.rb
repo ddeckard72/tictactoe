@@ -38,24 +38,28 @@ end
 
 class ComputerPlayerTests < MiniTest::Test
   def test_can_build_player
-    assert RandomPlayer.new
+    assert @computer = ComputerPlayer.new("Bob")
   end
 end
 
 class BoardTests < MiniTest::Test
-	def test_can_make_board
+	def setup
 		@board = Board.new
+	end
+
+	def test_can_make_board
 		assert @board
 	end
 
-	def test_iswin
+	def test_iswin?
 		#set up winning board
-		@board.iswin?
+		assert @board.iswin? == false
 	end
 
-	def test_isdraw
+	def test_isdraw?
 		#set up draw
-		@board.isdraw?
+
+		assert @board.isdraw? == false
 	end
 
 	def test_move
@@ -65,5 +69,20 @@ class BoardTests < MiniTest::Test
 end
 
 class ScoreboardTests < MiniTest::Test
+	def setup
+		@player1 = Player.new("Bob")
+		@player2 = Player.new("Joe")
+		@scoreboard = ScoreBoard.new(@player1, @player2)
+	end
 
+	def test_can_make_scoreboard
+		assert @scoreboard
+	end
+	
+	def test_winner
+	#give it a winner
+	@scoreboard.winner(@player1)
+	assert @scoreboard.winner? == @player1
+	end
+	#check values
 end
