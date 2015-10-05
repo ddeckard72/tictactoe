@@ -1,5 +1,5 @@
-require "./human"
 require "./player"
+require "./human"
 require "./computer"
 require "./board"
 require "./game"

@@ -1,5 +1,5 @@
-require "./human"
 require "./player"
+require "./human"
 require "./computer"
 require "./board"
 require "./scoreboard"
@@ -30,7 +30,7 @@ class Game
 	def play
 		until @board.iswin? || @board.draw?
 			@board.show
-			if current_player == player1
+			if @current_player == player1
 				@board.move(@player1.take_turn(board),"X")
 				@current_player = player1
 			else
